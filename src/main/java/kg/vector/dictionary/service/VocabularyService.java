@@ -74,6 +74,7 @@ public class VocabularyService {
         Vocabulary word = vocabularyRepository.findById(id).orElseThrow(() -> new VocabularyNotFoundException("Didn't find that word"));
         if (word.getWord().equals(vocabulary.getWord())) {
             word.setRating(word.getRating() + 1);
+            log.info("You have chosen the correct answer{}", word);
         } else {
             word.setRating(word.getRating() - 2);
         }
@@ -81,7 +82,7 @@ public class VocabularyService {
             word.setRating(0);
         }
         vocabularyRepository.save(word);
-        log.error("the word is learned {}", word);
+
     }
 
     public void uploadFile(MultipartFile file) {

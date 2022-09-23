@@ -16,7 +16,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Vocabulary implements Serializable {
+public class Vocabulary  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

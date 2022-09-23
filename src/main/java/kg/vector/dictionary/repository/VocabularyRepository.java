@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface VocabularyRepository extends JpaRepository<Vocabulary, Long> {
-    boolean existsByWordAndTranslate(String word, String translate);
 
 }
