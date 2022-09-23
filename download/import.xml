@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class>
+    <vocabulary>
+        <word>Звезда</word>
+        <translate>Star</translate>
+        <rating>0</rating>
+    </vocabulary>
+    <vocabulary>
+        <word>Мышь</word>
+        <translate>Mouse</translate>
+        <rating>0</rating>
+    </vocabulary>
+    <vocabulary>
+        <word>Клавиатура</word>
+        <translate>Keyboard</translate>
+        <rating>0</rating>
+    </vocabulary>
+</class>
+    

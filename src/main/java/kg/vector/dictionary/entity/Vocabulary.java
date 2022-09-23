@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "vocabulary")
@@ -15,7 +16,7 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Vocabulary {
+public class Vocabulary implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,6 +31,5 @@ public class Vocabulary {
     private String translate;
 
     @NotNull
-    @Size(min = 1, max = 10, message = "Rating must be from 1 to 10")
     private Integer rating;
 }
