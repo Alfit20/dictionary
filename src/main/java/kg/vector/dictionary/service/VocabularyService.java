@@ -38,6 +38,7 @@ public class VocabularyService {
         Collections.shuffle(randomElement);
         vocabulary = vocabularyRepository.findById(randomElement.get(0).getId())
                 .orElseThrow(() -> new VocabularyNotFoundException("Didn't find that word"));
+        log.info("Random word selected {}", vocabulary);
         return VocabularyDTO.from(vocabulary);
     }
 
@@ -56,6 +57,7 @@ public class VocabularyService {
                 .limit(6)
                 .collect(Collectors.toList());
         vocabularies.add(VocabularyDTO.from(vocabulary));
+        log.info("7 random letters {}", vocabularies);
         Collections.shuffle(vocabularies);
         return vocabularies;
     }
@@ -79,6 +81,7 @@ public class VocabularyService {
             word.setRating(0);
         }
         vocabularyRepository.save(word);
+        log.error("the word is learned {}", word);
     }
 
     public void uploadFile(MultipartFile file) {
@@ -101,7 +104,7 @@ public class VocabularyService {
                 vocabularyRepository.save(vocabularyToSave);
             }
         } catch (IOException | ParserConfigurationException | SAXException e) {
-            System.out.println("файл download/import.xml не обнаружен");
+            log.error("файл download/import.xml не обнаружен");
         }
     }
 
